@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+//COLORS THEME 1
+$primary-background-blue: hsl(222, 26%, 31%);
+$secondary-background-blue: hsl(223, 31%, 20%);
+$ternary-background-blue: hsl(224, 36%, 15%);
+
+$key-background-blue: hsl(225, 21%, 49%);
+$key-shadow-blue: hsl(224, 28%, 35%);
+
+$key-background-red: hsl(6, 63%, 50%);
+$key-background-dark-red: hsl(6, 70%, 34%);
+
+$key-background-light-grayish: hsl(30, 25%, 89%);
+$key-shadow-grayish: hsl(28, 16%, 65%);
+
+$text-dark-grayish: hsl(221, 14%, 31%);
+$text-white: hsl(0, 0%, 100%);
+
 body {
   padding: 0;
   margin: 0;
@@ -11,6 +30,7 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  font-family: 'League Spartan', sans-serif;
 }
 
 .calculator {
@@ -20,13 +40,69 @@ body {
   justify-content: space-between;
   height: 85vh;
   width: 650px;
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 8%;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    color: $text-white;
+  
+    .switch {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: ". number"
+                           "theme selector";
+      .switch-number {
+        grid-area: number;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+      }
+      .switch-theme {
+        grid-area: theme;
+        padding-right: 20px;
+        line-height: 1.5;
+        font-size: 12px;
+        font-weight: bolder;
+      }
+      .switch-selector {
+        grid-area: selector;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 10px;
+        background-color: $secondary-background-blue;
+        button {
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          background-color: transparent;
+          border: none;
+        }
+        .active{
+          background-color: $key-background-red;
+        }
+      }
+    }
+  }
 }
 
-.header {
-  display: flex;
-  background-color: red;
-  height: 10%;
-  width: 100%;
+.theme-1 {
+  background-color: $primary-background-blue;
+  .header {
+    color: $text-white;
+    .switch {
+      .switch-selector {
+        background-color: $secondary-background-blue;
+      }
+    }
+  }
 }
 
 .visor {
