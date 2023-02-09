@@ -17,6 +17,41 @@ $key-shadow-grayish: hsl(28, 16%, 65%);
 $text-dark-grayish: hsl(221, 14%, 31%);
 $text-white: hsl(0, 0%, 100%);
 
+//COLORS THEME 2
+$primary-background-light-gray: hsl(0, 0%, 90%);
+$secondary-background-grayish-red: hsl(0, 5%, 81%);
+$ternary-background-light-gray: hsl(0, 0%, 93%);
+
+$key-background-cyan: hsl(185, 42%, 37%);
+$key-shadow-dark-cyan: hsl(185, 58%, 25%);
+
+$key-background-orange: hsl(25, 98%, 40%);
+$key-background-dark-orange: hsl(25, 99%, 27%);
+
+$key-background-grayish-yellow: hsl(45, 7%, 89%);
+$key-shadow-grayish-orange: hsl(35, 11%, 61%);
+
+$text-dark-grayish-yellow: hsl(60, 10%, 19%);
+$text-dark: hsl(0, 0%, 10%);
+$text-white: hsl(0, 0%, 100%);
+
+//COLORS THEME 3
+$primary-background-dark-violet: hsl(268, 75%, 9%);
+$secondary-background-violet: hsl(268, 71%, 12%);
+
+$key-background-violet: hsl(281, 89%, 26%);
+$key-shadow-magenta: hsl(285, 91%, 52%);
+
+$key-background-pure-cyan: hsl(176, 100%, 44%);
+$key-background-soft-cyan: hsl(177, 92%, 70%);
+
+$key-background-dark-violet: hsl(268, 47%, 21%);
+$key-shadow-dark-magenta: hsl(290, 70%, 36%);
+
+$text-light-yellow: hsl(52, 100%, 62%);
+$text-dark-blue: hsl(198, 20%, 13%);
+$text-white: hsl(0, 0%, 100%);
+
 body {
   padding: 0;
   margin: 0;
@@ -85,9 +120,6 @@ body {
           background-color: transparent;
           border: none;
         }
-        .active{
-          background-color: $key-background-red;
-        }
       }
     }
   }
@@ -100,6 +132,39 @@ body {
     .switch {
       .switch-selector {
         background-color: $secondary-background-blue;
+        .active{
+          background-color: $key-background-red;
+        }
+      }
+    }
+  }
+}
+
+.theme-2 {
+  background-color: $primary-background-light-gray;
+  .header {
+    color: $text-dark-grayish-yellow;
+    .switch {
+      .switch-selector {
+        background-color: $secondary-background-grayish-red;
+        .active{
+          background-color: $key-background-orange;
+        }
+      }
+    }
+  }
+}
+
+.theme-3 {
+  background-color: $primary-background-dark-violet;
+  .header {
+    color: $text-light-yellow;
+    .switch {
+      .switch-selector {
+        background-color: $key-background-dark-violet;
+        .active{
+          background-color: $key-background-pure-cyan;
+        }
       }
     }
   }

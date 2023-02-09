@@ -10,7 +10,7 @@ function App() {
   }
 
   return (
-    <div className={`${styles["container"]} ${styles["theme-1"]}`}>
+    <div className={`${styles["container"]} ${styles[theme]}`}>
       <div className={styles["calculator"]}>
         <div className={styles["header"]}>
           <h1>calc</h1>
