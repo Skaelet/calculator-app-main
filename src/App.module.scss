@@ -123,6 +123,35 @@ body {
       }
     }
   }
+  .visor {
+    display: flex;
+    height: 20%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    .visor-input {
+      background-color: yellow;
+      width: 100%;
+      border: none;
+      padding: 36px 18px;
+      font-size: 46px;
+      font-weight: 700;
+      text-align: end;
+      &:focus-visible {
+        outline: none;
+        caret-color: transparent;
+      }
+    }
+  }
+  
+  .keyboard {
+    display: flex;
+    background-color: green;
+    height: 64%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+  }
 }
 
 .theme-1 {
@@ -170,20 +199,3 @@ body {
   }
 }
 
-.visor {
-  display: flex;
-  background-color: yellow;
-  height: 20%;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.keyboard {
-  display: flex;
-  background-color: green;
-  height: 64%;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-}

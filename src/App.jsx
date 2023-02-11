@@ -28,7 +28,9 @@ function App() {
             </div>
           </div>
         </div>
-        <div className={styles["visor"]}></div>
+        <div className={styles["visor"]}>
+          <input type="text" name="visor" id="visor" className={styles["visor-input"]} autoComplete={false}/>
+        </div>
         <div className={styles["keyboard"]}></div>
       </div>
     </div>
