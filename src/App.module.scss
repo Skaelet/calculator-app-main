@@ -73,8 +73,8 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
-  height: 85vh;
-  width: 650px;
+  height: 80vh;
+  width: 600px;
   .header {
     display: flex;
     flex-flow: row nowrap;
@@ -125,7 +125,7 @@ body {
   }
   .visor {
     display: flex;
-    height: 20%;
+    height: 15%;
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
@@ -134,8 +134,8 @@ body {
       width: 100%;
       border: none;
       padding: 36px 18px;
-      font-size: 46px;
-      font-weight: 700;
+      font-size: 52px;
+      font-weight: 900;
       text-align: end;
       &:focus-visible {
         outline: none;
@@ -147,7 +147,7 @@ body {
   .keyboard {
     display: flex;
     background-color: green;
-    height: 64%;
+    height: 70%;
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
