@@ -52,7 +52,7 @@ $text-light-yellow: hsl(52, 100%, 62%);
 $text-dark-blue: hsl(198, 20%, 13%);
 $text-white: hsl(0, 0%, 100%);
 
-body {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -113,12 +113,14 @@ body {
         align-items: center;
         border-radius: 10px;
         background-color: $secondary-background-blue;
+        cursor: pointer;
         button {
           width: 12px;
           height: 12px;
           border-radius: 100%;
           background-color: transparent;
           border: none;
+          cursor: pointer;
         }
       }
     }
