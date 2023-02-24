@@ -132,7 +132,6 @@ $text-white: hsl(0, 0%, 100%);
     overflow: hidden;
     border-radius: 10px;
     .visor-input {
-      background-color: yellow;
       width: 100%;
       border: none;
       padding: 36px 18px;
@@ -158,45 +157,78 @@ $text-white: hsl(0, 0%, 100%);
 
 .theme-1 {
   background-color: $primary-background-blue;
-  .header {
-    color: $text-white;
-    .switch {
-      .switch-selector {
-        background-color: $secondary-background-blue;
-        .active{
-          background-color: $key-background-red;
+  .calculator {
+    .header {
+      color: $text-white;
+      .switch {
+        .switch-selector {
+          background-color: $secondary-background-blue;
+          .active{
+            background-color: $key-background-red;
+          }
         }
       }
+    }
+    .visor {
+      .visor-input {
+        color: $text-white;
+        background-color: $ternary-background-blue;
+      }
+    }
+    .keyboard {
+      background-color: $secondary-background-blue;
     }
   }
 }
 
 .theme-2 {
   background-color: $primary-background-light-gray;
-  .header {
-    color: $text-dark-grayish-yellow;
-    .switch {
-      .switch-selector {
-        background-color: $secondary-background-grayish-red;
-        .active{
-          background-color: $key-background-orange;
+  .calculator {
+    .header {
+      color: $text-dark-grayish-yellow;
+      .switch {
+        .switch-selector {
+          background-color: $secondary-background-grayish-red;
+          .active{
+            background-color: $key-background-orange;
+          }
         }
       }
+    }
+    .visor {
+      .visor-input {
+        color: $text-dark-grayish-yellow;
+        background-color: $ternary-background-light-gray;
+      }
+    }
+    .keyboard {
+      background-color: $secondary-background-grayish-red;
     }
   }
 }
 
 .theme-3 {
   background-color: $primary-background-dark-violet;
-  .header {
-    color: $text-light-yellow;
-    .switch {
-      .switch-selector {
-        background-color: $key-background-dark-violet;
-        .active{
-          background-color: $key-background-pure-cyan;
+  .calculator {
+    .header {
+      color: $text-light-yellow;
+      .switch {
+        .switch-selector {
+          background-color: $secondary-background-violet;
+          .active{
+            background-color: $key-background-pure-cyan;
+          }
         }
       }
+    }
+    .visor {
+      .visor-input {
+        color: $text-light-yellow;
+        background-color: $secondary-background-violet;
+      }
+    }
+    .keyboard {
+      background-color: $secondary-background-violet;
     }
   }
 }
