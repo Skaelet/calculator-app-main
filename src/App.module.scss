@@ -9,7 +9,7 @@ $key-background-blue: hsl(225, 21%, 49%);
 $key-shadow-blue: hsl(224, 28%, 35%);
 
 $key-background-red: hsl(6, 63%, 50%);
-$key-background-dark-red: hsl(6, 70%, 34%);
+$key-shadow-red: hsl(6, 70%, 34%);
 
 $key-background-light-grayish: hsl(30, 25%, 89%);
 $key-shadow-grayish: hsl(28, 16%, 65%);
@@ -22,11 +22,11 @@ $primary-background-light-gray: hsl(0, 0%, 90%);
 $secondary-background-grayish-red: hsl(0, 5%, 81%);
 $ternary-background-light-gray: hsl(0, 0%, 93%);
 
-$key-background-cyan: hsl(185, 42%, 37%);
+$key-background-dark-cyan: hsl(185, 42%, 37%);
 $key-shadow-dark-cyan: hsl(185, 58%, 25%);
 
 $key-background-orange: hsl(25, 98%, 40%);
-$key-background-dark-orange: hsl(25, 99%, 27%);
+$key-shadow-orange: hsl(25, 99%, 27%);
 
 $key-background-grayish-yellow: hsl(45, 7%, 89%);
 $key-shadow-grayish-orange: hsl(35, 11%, 61%);
@@ -42,8 +42,8 @@ $secondary-background-violet: hsl(268, 71%, 12%);
 $key-background-violet: hsl(281, 89%, 26%);
 $key-shadow-magenta: hsl(285, 91%, 52%);
 
-$key-background-pure-cyan: hsl(176, 100%, 44%);
-$key-background-soft-cyan: hsl(177, 92%, 70%);
+$key-background-cyan: hsl(176, 100%, 44%);
+$key-shadow-cyan: hsl(177, 92%, 70%);
 
 $key-background-dark-violet: hsl(268, 47%, 21%);
 $key-shadow-dark-magenta: hsl(290, 70%, 36%);
@@ -69,18 +69,16 @@ $text-white: hsl(0, 0%, 100%);
 }
 
 .calculator {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-between;
-  height: 80vh;
+  display: grid;
+  grid-template-rows: 1fr 3fr 12fr;
+  row-gap: 30px;
+  height: 85vh;
   width: 600px;
   .header {
     display: flex;
     flex-flow: row nowrap;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    height: 8%;
     width: 100%;
     padding: 5px;
     box-sizing: border-box;
@@ -92,18 +90,21 @@ $text-white: hsl(0, 0%, 100%);
       grid-template-rows: 1fr 1fr;
       grid-template-areas: ". number"
                            "theme selector";
+                           
+      font-size: 12px;
       .switch-number {
         grid-area: number;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
+        padding-top: 12px;
       }
       .switch-theme {
         grid-area: theme;
-        padding-right: 20px;
+        padding: 6px 0 0 25px;
         line-height: 1.5;
-        font-size: 12px;
         font-weight: bolder;
+        letter-spacing: 2px;
       }
       .switch-selector {
         grid-area: selector;
@@ -111,12 +112,14 @@ $text-white: hsl(0, 0%, 100%);
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: center;
-        border-radius: 10px;
+        border-radius: 20px;
         background-color: $secondary-background-blue;
         cursor: pointer;
+        padding: 5px;
+        width: 80px;
         button {
-          width: 12px;
-          height: 12px;
+          width: 20px;
+          height: 20px;
           border-radius: 100%;
           background-color: transparent;
           border: none;
@@ -127,7 +130,6 @@ $text-white: hsl(0, 0%, 100%);
   }
   .visor {
     display: flex;
-    height: 15%;
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
@@ -135,7 +137,7 @@ $text-white: hsl(0, 0%, 100%);
       width: 100%;
       border: none;
       padding: 36px 18px;
-      font-size: 52px;
+      font-size: 58px;
       font-weight: 900;
       text-align: end;
       &:focus-visible {
@@ -146,12 +148,34 @@ $text-white: hsl(0, 0%, 100%);
   }
   
   .keyboard {
-    display: flex;
-    background-color: green;
-    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 30px;
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
+    padding: 35px;
+
+    .keyboard-key {
+      font-family: 'League Spartan', sans-serif;
+      border-radius: 10px;
+      font-size: 32px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      z-index: 0;
+      &:active{
+        filter: brightness(1.2);
+      }
+      &:nth-child(17) {
+        grid-column: 2 span;
+      }
+
+      &:nth-child(18) {
+        grid-column: 2 span;
+      }
+    }
   }
 }
 
@@ -177,6 +201,26 @@ $text-white: hsl(0, 0%, 100%);
     }
     .keyboard {
       background-color: $secondary-background-blue;
+      .keyboard-key {
+        box-shadow: inset 0px -4px 0px 0px $key-shadow-grayish;
+        background-color: $key-background-light-grayish;
+        color: $text-dark-grayish;
+        &:nth-child(4) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-blue;
+          background-color: $key-background-blue;
+          color: $text-white;
+        }
+        &:nth-child(17) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-blue;
+          background-color: $key-background-blue;
+          color: $text-white;
+        }
+        &:nth-child(18) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-red;
+          background-color: $key-background-red;
+          color: $text-white;
+        }
+      }
     }
   }
 }
@@ -203,6 +247,26 @@ $text-white: hsl(0, 0%, 100%);
     }
     .keyboard {
       background-color: $secondary-background-grayish-red;
+      .keyboard-key {
+        box-shadow: inset 0px -4px 0px 0px $key-shadow-grayish-orange;
+        background-color: $key-background-grayish-yellow;
+        color: $text-dark-grayish-yellow;
+        &:nth-child(4) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-dark-cyan;
+          background-color: $key-background-dark-cyan;
+          color: $text-white;
+        }
+        &:nth-child(17) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-dark-cyan;
+          background-color: $key-background-dark-cyan;
+          color: $text-white;
+        }
+        &:nth-child(18) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-orange;
+          background-color: $key-background-orange;
+          color: $text-white;
+        }
+      }
     }
   }
 }
@@ -216,7 +280,7 @@ $text-white: hsl(0, 0%, 100%);
         .switch-selector {
           background-color: $secondary-background-violet;
           .active{
-            background-color: $key-background-pure-cyan;
+            background-color: $key-background-cyan;
           }
         }
       }
@@ -229,7 +293,26 @@ $text-white: hsl(0, 0%, 100%);
     }
     .keyboard {
       background-color: $secondary-background-violet;
+      .keyboard-key {
+        box-shadow: inset 0px -4px 0px 0px $key-shadow-dark-magenta;
+        background-color: $key-background-dark-violet;
+        color: $text-light-yellow;
+        &:nth-child(4) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-magenta;
+          background-color: $key-background-violet;
+          color: $text-white;
+        }
+        &:nth-child(17) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-magenta;
+          background-color: $key-background-violet;
+          color: $text-white;
+        }
+        &:nth-child(18) {
+          box-shadow: inset 0px -4px 0px 0px $key-shadow-cyan;
+          background-color: $key-background-cyan;
+          color: $text-dark;
+        }
+      }
     }
   }
 }
-
